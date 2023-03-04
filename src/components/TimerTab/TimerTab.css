@@ -1,0 +1,39 @@
+#component-root {
+    width: 100vw;
+    text-align: center;
+    padding-top: 64px;
+}
+
+p.label {
+    margin: 0;
+    opacity: .7;
+}
+
+p.task {
+    margin: 0;
+    font-size: 20pt;
+}
+
+.timer {
+    position: relative;
+    width: 95vw;
+    height: 128px;
+    background-color: #0b1118;
+    border-radius: 16px;
+    margin: auto;
+}
+
+.timer p {
+    line-height: 128px;
+    font-size: 42pt;
+    font-family: 'Roboto Mono' 
+}
+
+.buttons {
+    margin-top: 16px;
+}
+
+.button {
+    height: 128px;
+    margin: 0 32px;
+}
