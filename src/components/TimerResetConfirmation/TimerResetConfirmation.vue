@@ -4,8 +4,8 @@
         <div id="panel">
             <h2>Vraiment ?</h2>
             <p>Le temps sera définitement enregistré et vous ne pourrez plus reprendre cette session.</p>
-            <p class="button" id="yes" @click="resetTimer">Yes</p>
-            <p class="button" id="no" @click="resumeTimer">No</p>
+            <p class="button" id="yes" @click="resetTimer">Oui</p>
+            <p class="button" id="no" @click="resumeTimer">Non</p>
         </div>  
 
     </div>

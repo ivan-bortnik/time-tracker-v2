@@ -13,6 +13,10 @@
 </template>
 
 <script>
+
+//const electron = require('electron')
+const settings = require('electron-settings');
+
 import Navbar from './components/Navbar/Navbar.vue';
 import TimerTab from './components/TimerTab/TimerTab.vue';
 import HistoryTab from './components/HistoryTab/HistoryTab.vue';
@@ -24,6 +28,9 @@ export default {
     'timer-tab': TimerTab,
     'history-tab': HistoryTab,
     'projects-tab': ProjectsTab
+  },
+  beforeMount() {
+    this.load();
   },
   data () {
     return {
@@ -52,6 +59,16 @@ export default {
           date: today
         }
       );
+      this.save();
+    },
+    save() {
+      console.log(settings.file());
+      settings.set('history', JSON.stringify(this.history));
+    },
+    load() {
+      settings.get('history').then(val => {
+        this.history = JSON.parse(val);
+      });
     }
   }
 }

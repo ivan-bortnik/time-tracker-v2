@@ -1,0 +1,46 @@
+#component-root {
+    width: 100vw;
+}
+
+p {
+    position: relative;
+    background-color: #192531;
+    border-radius: 16px;
+    margin: 16px;
+    padding: 16px;
+}
+
+.name {
+    font-weight: 500;
+}
+
+.date {
+    opacity: .7;
+}
+
+.time {
+    position: absolute;
+    background-color: #0b1118;
+    top: 4px;
+    right: 4px;
+    padding: 8px;
+    border-radius: 16px;
+    font-family: 'Roboto Mono' ;
+}
+
+.container {
+    position: absolute;
+    width: 100vw;
+    top: 64px;
+    bottom: -12px;
+    overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #192531;
+    border-radius: 4px;
+}

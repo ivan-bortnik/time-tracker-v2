@@ -1,7 +1,7 @@
 <template>
     <div id="component-root">
 
-        <p class="label">Working On</p>
+        <p class="label">En cours</p>
         <p class="task">{{ task }}</p>
         <div class="timer">
             <p>
@@ -10,8 +10,8 @@
         </div>
 
         <div class="buttons">
-            <img src="../../assets/logo.png" alt="" class="button" @click="toggleTimer">
-            <img src="../../assets/logo.png" alt="" class="button" @click="askForConfirmation">
+            <img :src="btnSrc" alt="" class="button" @click="toggleTimer">
+            <img src="../../assets/stop.png" alt="" class="button" @click="askForConfirmation">
         </div>
 
         <timer-reset-confirmation v-if="askingForConfirmation"/>
@@ -35,7 +35,12 @@ export default {
             isRunning: false,
             elapsedTime: 0,
             interval: null,
-            askingForConfirmation: false
+            askingForConfirmation: false,
+
+            buttonStart: require('../../assets/start.png'),
+            buttonPause: require('../../assets/pause.png'),
+
+            btnSrc: require('../../assets/start.png')
 
         }
     },
@@ -44,8 +49,11 @@ export default {
         toggleTimer () {
             if (this.isRunning) {
                 this.stopTimer();
+                this.btnSrc = this.buttonStart;
+
             } else {
                 this.startTimer();
+                this.btnSrc = this.buttonPause;
             }
         },
 
@@ -74,6 +82,7 @@ export default {
             this.stopTimer();
             this.$parent.saveInHistory(this.elapsedTime);
             this.elapsedTime = 0;
+            this.btnSrc = this.buttonStart;
         },
 
         /**

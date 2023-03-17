@@ -1,9 +1,17 @@
 <template>
     <div id="component-root">
 
-        <img src="../../assets/timer.png" @click="switchTab(0)">
-        <img src="../../assets/timer.png" @click="switchTab(1)">
-        <img src="../../assets/timer.png" @click="switchTab(2)">
+        <div class="area">
+            <img src="../../assets/projects.png" @click="switchTab(0)">
+        </div>
+
+        <div class="area">
+            <img src="../../assets/timer.png" @click="switchTab(1)">
+        </div>
+        
+        <div class="area">
+            <img src="../../assets/history.png" @click="switchTab(2)">
+        </div>
 
     </div>
 </template>
@@ -26,17 +34,28 @@ export default {
 <style scoped>
 
 #component-root {
-    background-color: #222f3e;
+    background-color: #192531;
     text-align: center;
     position: absolute;
     bottom: 0;
     width: 100vw;
-    height: 64px;
+    height: 52px;
+}
+
+.area {
+    width: 50px;
+    display: inline;
 }
 
 img {
-    width: 40px;
+    height: 40px;
     padding: 6px 32px;
+    transition: .15s;
+}
+
+.area:hover > img {
+    transform: translateY(-50%) scale(1.5);
+    transition: .15s;
 }
 
 </style>

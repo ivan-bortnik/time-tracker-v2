@@ -1,7 +1,7 @@
 <template>
     <div id="component-root">
 
-        <h2>Projects</h2>
+        <h2>Projets</h2>
 
     </div>
 </template>
