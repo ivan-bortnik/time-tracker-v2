@@ -13,12 +13,10 @@
 </template>
 
 <script>
-
 import Navbar from './components/Navbar/Navbar.vue';
 import TimerTab from './components/TimerTab/TimerTab.vue';
 import HistoryTab from './components/HistoryTab/HistoryTab.vue';
 import ProjectsTab from './components/ProjectsTab/ProjectsTab.vue';
-
 export default {
   name: 'App',
   components: {
@@ -29,9 +27,7 @@ export default {
   },
   data () {
     return {
-
       selectedTab: 1,
-
       currentProject: 0,
       projects: [
         {
@@ -47,7 +43,6 @@ export default {
     switchTab (tabIdx) {
       this.selectedTab = tabIdx
     },
-
     saveInHistory (time) {
       let today = new Date().toLocaleDateString();
       this.history.unshift(
@@ -70,7 +65,6 @@ export default {
   color: #fff;
   background-color: #222f3e;
 }
-
 #tabs {
   position: absolute;
   width: 300vw;
@@ -79,7 +73,6 @@ export default {
   flex-direction: row;
   transition: .15s;
 }
-
 h2 {
   padding: 0 16px;
 }
