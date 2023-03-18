@@ -1,16 +1,16 @@
 <template>
     <div id="component-root">
 
-        <div class="area">
-            <img src="../../assets/projects.png" @click="switchTab(0)">
+        <div class="area" @click="switchTab(0)">
+            <img src="../../assets/projects.png">
         </div>
 
-        <div class="area">
-            <img src="../../assets/timer.png" @click="switchTab(1)">
+        <div class="area" @click="switchTab(1)">
+            <img src="../../assets/timer.png">
         </div>
         
-        <div class="area">
-            <img src="../../assets/history.png" @click="switchTab(2)">
+        <div class="area" @click="switchTab(2)">
+            <img src="../../assets/history.png" >
         </div>
 
     </div>

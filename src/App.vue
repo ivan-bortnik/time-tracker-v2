@@ -2,7 +2,7 @@
   <div id="app">
 
     <div id="tabs" :style="{ left: -selectedTab * 100 + 'vw' }">
-      <projects-tab/>
+      <projects-tab :projects="projects"/>
       <timer-tab :task="projects[currentProject].name"/>
       <history-tab :history="history"/>
     </div>
@@ -40,6 +40,10 @@ export default {
         {
           name: "Test Project 1",
           time: 541
+        },
+        {
+          name: "Test Project 2",
+          time: 8846
         }
       ],
       history: []
@@ -62,12 +66,15 @@ export default {
       this.save();
     },
     save() {
-      console.log(settings.file());
       settings.set('history', JSON.stringify(this.history));
+      settings.set('projects', JSON.stringify(this.projects));
     },
     load() {
       settings.get('history').then(val => {
         this.history = JSON.parse(val);
+      });
+      settings.get('projects').then(val => {
+        this.projects = JSON.parse(val);
       });
     }
   }

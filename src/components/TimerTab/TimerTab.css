@@ -34,6 +34,19 @@ p.task {
 }
 
 .button {
-    height: 128px;
+    height: 96px;
     margin: 0 32px;
+    border-radius: 100%;
+    transition: .15s;
+}
+
+.button:hover {
+    transform: scale(1.1);
+    box-shadow: black 0 0 10px;
+    transition: .15s;
+}
+
+.button:active {
+    transform: scale(0.7);
+    transition: .15s;
 }

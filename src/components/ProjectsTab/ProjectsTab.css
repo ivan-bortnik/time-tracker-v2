@@ -1,0 +1,65 @@
+#component-root {
+    width: 100vw;
+}
+
+p {
+    position: relative;
+    background-color: #192531;
+    border-radius: 16px;
+    margin: 16px;
+    padding: 16px;
+    transition: .15s;
+}
+
+.name {
+    font-weight: 500;
+}
+
+.time {
+    position: absolute;
+    background-color: #0b1118;
+    top: 4px;
+    right: 4px;
+    padding: 8px;
+    border-radius: 16px;
+    font-family: 'Roboto Mono' ;
+}
+
+.container {
+    position: absolute;
+    width: 100vw;
+    top: 64px;
+    bottom: -12px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #192531;
+    border-radius: 4px;
+}
+
+p:hover {
+    transform: scale(1.05);
+    box-shadow: black 0 0 15px;
+    transition: .15s;
+}
+
+.current {
+    border-left: 16px solid white;
+}
+
+.add-project {
+    position: absolute;
+    height: 8px;
+    top: 8px;
+    left: 58vw;
+    border-radius: 999px;
+    text-align: center;
+    line-height: 8px;
+    font-weight: 600;
+}
