@@ -59,6 +59,9 @@ export default {
           date: today
         }
       );
+
+      this.projects[this.currentProject].time += time;
+
       this.save();
     },
     save() {
@@ -70,9 +73,7 @@ export default {
         if (typeof val !== 'undefined') { this.history = val; }
       });
       settings.get('projects').then(val => {
-        if (typeof val !== 'undefined') {
           if (typeof val !== 'undefined') { this.projects = val; }
-        }
       });
     }
   }
