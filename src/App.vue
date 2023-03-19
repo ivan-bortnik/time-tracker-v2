@@ -36,12 +36,7 @@ export default {
     return {
       selectedTab: 1,
       currentProject: 0,
-      projects: [
-        // {
-        //   name: "Test Project 1",
-        //   time: 541
-        // }
-      ],
+      projects: [],
       history: []
       
     }
@@ -61,14 +56,13 @@ export default {
       );
 
       this.projects[this.currentProject].time += time;
-
       this.save();
     },
-    save() {
-      settings.set('history', this.history);
-      settings.set('projects', this.projects);
+    async save() {
+      await settings.set('projects', this.projects);
+      await settings.set('history', this.history);
     },
-    load() {
+    async load() {
       settings.get('history').then(val => {
         if (typeof val !== 'undefined') { this.history = val; }
       });
