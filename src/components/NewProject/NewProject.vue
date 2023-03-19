@@ -13,7 +13,8 @@
             <input type="text" name="" id="" v-model="pClient">
             
             <br>
-            <button @click="create()">CREER</button>
+            <button @click="create()" id="create">Creer</button>
+            <button @click="$parent.isNewProjectWindowVisible = false" id="cancel">Annuler</button>
 
         </div>  
 
@@ -32,12 +33,14 @@ export default {
     },
     methods: {
         create () {
-            this.$parent.$parent.projects.unshift({
-                name: this.pName,
-                time: 0
-            });
-            this.$parent.isNewProjectWindowVisible = false;
-            this.$parent.$parent.save();
+            if (this.pName != '') {
+                this.$parent.$parent.projects.unshift({
+                    name: this.pName,
+                    time: 0
+                });
+                this.$parent.isNewProjectWindowVisible = false;
+                this.$parent.$parent.save();
+            }
         }
     }
 }

@@ -48,3 +48,17 @@ button {
     background-color: #10ac84;;
     color: #fff;
 }
+
+#create {
+    background-color: #10ac84;
+}
+
+#cancel {
+    background-color: #ee5253;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: black 0 0 15px;
+    transition: .15s;
+}

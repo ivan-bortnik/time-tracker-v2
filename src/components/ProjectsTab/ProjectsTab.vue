@@ -7,9 +7,10 @@
 
         <div class="container">
             <p v-for="(item, idx) in projects" :key="idx" @click="setProject(idx)"
-            :class="($parent.currentProject == idx) ? 'current' : ''">
+            :class="($parent.currentProject == idx) ? 'current' : ''" class="item">
                 <span class="name">{{ item.name }}</span><br>
                 <span class="time">{{ formatTime(item.time) }}</span>
+                <button class="delete" @click="$parent.projects.splice(idx, 1)">X</button>
             </p>
         </div>
 

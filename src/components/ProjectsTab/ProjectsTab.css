@@ -49,8 +49,14 @@ p:hover {
     transition: .15s;
 }
 
+.item:hover {
+    border-right: 42px solid #fff;
+    transition: .15s;
+}
+
 .current {
     border-left: 16px solid white;
+    transition: .15s;
 }
 
 .add-project {
@@ -62,4 +68,30 @@ p:hover {
     text-align: center;
     line-height: 8px;
     font-weight: 600;
+}
+
+.delete {
+    position: absolute;
+    right: -42px;
+    top: 0;
+    height: 57px;
+    width: 42px;
+    display: none;
+    transition: .15s;
+    border: none;
+    outline: none;
+    border-radius: 0 16px 16px 0;
+    background-color: #bd2b2b;
+    color: #fff;
+    font-weight: 800;
+}
+
+.delete:hover {
+    background-color: #ee5253;
+    transition: .15s;
+}
+
+.item:hover > .delete {
+    display: block;
+    transition: .15s;
 }

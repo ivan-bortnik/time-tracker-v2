@@ -13,7 +13,8 @@ protocol.registerSchemesAsPrivileged([
 async function createWindow() {
   // Create the browser window.
   const win = new BrowserWindow({
-    width: 800,
+    title: "Time Tracker",
+    width: 500,
     height: 600,
     webPreferences: {
       
@@ -22,7 +23,8 @@ async function createWindow() {
       nodeIntegration: true,
       contextIsolation: false,
       enableRemoteModule: true
-    }
+    },
+    resizable: false
   })
 
   if (process.env.WEBPACK_DEV_SERVER_URL) {
